@@ -1,4 +1,4 @@
-package com.antonioleiva.weatherapp.activities
+package com.antonioleiva.weatherapp.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -7,8 +7,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import com.antonioleiva.weatherapp.R
-import com.antonioleiva.weatherapp.adapters.ForecastListAdapter
+import com.antonioleiva.weatherapp.data.Request
+import com.antonioleiva.weatherapp.ui.adapters.ForecastListAdapter
+import org.jetbrains.anko.async
 import org.jetbrains.anko.find
+import org.jetbrains.anko.longToast
+import org.jetbrains.anko.uiThread
 
 public class MainActivity : AppCompatActivity() {
 
@@ -29,6 +33,13 @@ public class MainActivity : AppCompatActivity() {
         val forecastList: RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
+
+        val url = "http://api.openweathermap.org/data/2.5/forecast/daily?q=94043&mode=json&units=metric&cnt=7"
+
+        async {
+            Request(url).run()
+            uiThread { longToast("Request performed") }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
