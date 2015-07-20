@@ -1,4 +1,4 @@
-package com.antonioleiva.weatherapp.adapters
+package com.antonioleiva.weatherapp.ui.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
