@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.antonioleiva.weatherapp.R
 import com.antonioleiva.weatherapp.adapters.ForecastListAdapter
+import org.jetbrains.anko.find
 
 public class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,7 @@ public class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val forecastList = findViewById(R.id.forecast_list) as RecyclerView
+        val forecastList: RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
     }

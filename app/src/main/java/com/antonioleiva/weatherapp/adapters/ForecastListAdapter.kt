@@ -3,6 +3,7 @@ package com.antonioleiva.weatherapp.adapters
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.TextView
+import org.jetbrains.anko.text
 
 public class ForecastListAdapter(val items: List<String>) : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
 
