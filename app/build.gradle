@@ -28,6 +28,7 @@ dependencies {
     compile "org.jetbrains.anko:anko-sdk15:$anko_version"
     compile "org.jetbrains.anko:anko-support-v4:$anko_version"
     compile "com.google.code.gson:gson:2.3.1"
+    compile "com.squareup.picasso:picasso:2.5.2"
 }
 
 buildscript {
