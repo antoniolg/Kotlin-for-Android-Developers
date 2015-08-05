@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import com.antonioleiva.weatherapp.R
 import com.antonioleiva.weatherapp.domain.model.Forecast
 import com.antonioleiva.weatherapp.domain.model.ForecastList
-import com.antonioleiva.weatherapp.ui.utils.ctx
+import com.antonioleiva.weatherapp.extensions.ctx
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_forecast.view.*
+import java.text.DateFormat
+import java.util.*
 
 class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Forecast) -> Unit) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
@@ -30,12 +32,17 @@ class ForecastListAdapter(val weekForecast: ForecastList, val itemClick: (Foreca
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
                 Picasso.with(itemView.ctx).load(iconUrl).into(itemView.icon)
-                itemView.date.text = date
+                itemView.date.text = convertDate(date)
                 itemView.description.text = description
                 itemView.maxTemperature.text = "${high}º"
                 itemView.minTemperature.text = "${low}º"
                 itemView.setOnClickListener { itemClick(this) }
             }
+        }
+
+        private fun convertDate(date: Long): String {
+            val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
+            return df.format(date)
         }
     }
 }
