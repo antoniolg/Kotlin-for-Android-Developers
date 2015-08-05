@@ -1,7 +1,7 @@
 package com.antonioleiva.weatherapp.ui
 
 import android.app.Application
-import com.antonioleiva.weatherapp.ui.utils.DelegatesExt
+import com.antonioleiva.weatherapp.extensions.DelegatesExt
 
 class App : Application() {
 
