@@ -1,4 +1,4 @@
-package com.antonioleiva.weatherapp.data
+package com.antonioleiva.weatherapp.data.server
 
 data class ForecastResult(val city: City, val list: List<Forecast>)
 
