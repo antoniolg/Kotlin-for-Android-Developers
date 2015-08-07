@@ -14,7 +14,7 @@ import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
-public class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

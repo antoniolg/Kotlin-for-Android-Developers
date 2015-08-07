@@ -7,9 +7,9 @@ import com.antonioleiva.weatherapp.domain.model.ForecastList
 import java.text.DateFormat
 import java.util.*
 
-public class ForecastDataMapper {
+class ForecastDataMapper {
 
-    public fun convertFromDataModel(forecast: ForecastResult): ForecastList {
+    fun convertFromDataModel(forecast: ForecastResult): ForecastList {
         return ForecastList(forecast.city.name, forecast.city.country, convertForecastListToDomain(forecast.list))
     }
 
@@ -27,5 +27,5 @@ public class ForecastDataMapper {
         return df.format(date * 1000)
     }
 
-    private fun generateIconUrl(iconCode: String): String = "http://openweathermap.org/img/w/$iconCode.png"
+    private fun generateIconUrl(iconCode: String) = "http://openweathermap.org/img/w/$iconCode.png"
 }
