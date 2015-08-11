@@ -24,14 +24,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/dateText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="May 14, 2015"/>
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
