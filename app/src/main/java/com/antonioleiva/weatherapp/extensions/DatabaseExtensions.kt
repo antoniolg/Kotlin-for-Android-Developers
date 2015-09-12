@@ -17,3 +17,5 @@ fun <T : Any> SelectQueryBuilder.parseOpt(parser: (Map<String, Any>) -> T): T? =
 fun SQLiteDatabase.clear(tableName: String){
     execSQL("delete from $tableName")
 }
+
+fun SelectQueryBuilder.byId(id: Long): SelectQueryBuilder = whereSimple("_id = ?", id.toString())

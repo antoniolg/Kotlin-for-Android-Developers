@@ -1,11 +1,9 @@
 package com.antonioleiva.weatherapp.data.db
 
 import com.antonioleiva.weatherapp.domain.datasource.ForecastDataSource
+import com.antonioleiva.weatherapp.domain.model.Forecast
 import com.antonioleiva.weatherapp.domain.model.ForecastList
-import com.antonioleiva.weatherapp.extensions.clear
-import com.antonioleiva.weatherapp.extensions.parseList
-import com.antonioleiva.weatherapp.extensions.parseOpt
-import com.antonioleiva.weatherapp.extensions.toVarargArray
+import com.antonioleiva.weatherapp.extensions.*
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import java.util.*
@@ -25,6 +23,13 @@ class ForecastDb(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.insta
                 .parseOpt { CityForecast(HashMap(it), dailyForecast) }
 
         if (city != null) dataMapper.convertToDomain(city) else null
+    }
+
+    override fun requestDayForecast(id: Long): Forecast? = forecastDbHelper.use {
+        val forecast = select(DayForecastTable.NAME).byId(id).
+                parseOpt { DayForecast(HashMap(it)) }
+
+        if (forecast != null) dataMapper.convertDayToDomain(forecast) else null
     }
 
     fun saveForecast(forecast: ForecastList) = forecastDbHelper.use {
