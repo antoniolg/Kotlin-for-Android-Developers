@@ -9,11 +9,10 @@ import com.antonioleiva.weatherapp.R
 import com.antonioleiva.weatherapp.domain.model.Forecast
 import com.antonioleiva.weatherapp.domain.model.ForecastList
 import com.antonioleiva.weatherapp.extensions.ctx
+import com.antonioleiva.weatherapp.extensions.toDateString
 import com.squareup.picasso.Picasso
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_forecast.*
-import java.text.DateFormat
-import java.util.*
 
 class ForecastListAdapter(private val weekForecast: ForecastList,
         private val itemClick: (Forecast) -> Unit) :
@@ -37,17 +36,12 @@ class ForecastListAdapter(private val weekForecast: ForecastList,
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
                 Picasso.with(itemView.ctx).load(iconUrl).into(icon)
-                dateText.text = convertDate(date)
+                dateText.text = date.toDateString()
                 descriptionText.text = description
                 maxTemperature.text = "${high}º"
                 minTemperature.text = "${low}º"
                 itemView.setOnClickListener { itemClick(this) }
             }
-        }
-
-        private fun convertDate(date: Long): String {
-            val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
-            return df.format(date)
         }
     }
 }
