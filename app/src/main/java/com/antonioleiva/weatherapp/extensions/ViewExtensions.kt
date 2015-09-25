@@ -1,4 +1,4 @@
-package com.antonioleiva.weatherapp.ui.utils
+package com.antonioleiva.weatherapp.extensions
 
 import android.content.Context
 import android.view.View
