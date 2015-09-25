@@ -1,13 +1,11 @@
-package com.antonioleiva.weatherapp.domain.mappers
+package com.antonioleiva.weatherapp.data.server
 
-import com.antonioleiva.weatherapp.data.server.Forecast
-import com.antonioleiva.weatherapp.data.server.ForecastResult
 import com.antonioleiva.weatherapp.domain.model.Forecast as ModelForecast
 import com.antonioleiva.weatherapp.domain.model.ForecastList
 
-class ForecastDataMapper {
+class ServerDataMapper {
 
-    fun convertFromDataModel(zipCode: Long, forecast: ForecastResult) = with(forecast) {
+    fun convertToDomain(zipCode: Long, forecast: ForecastResult) = with(forecast) {
         ForecastList(zipCode, city.name, city.country, convertForecastListToDomain(list))
     }
 
