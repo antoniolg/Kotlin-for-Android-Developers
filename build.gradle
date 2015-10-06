@@ -2,8 +2,8 @@
 
 buildscript {
     ext.support_version = '23.0.1'
-    ext.kotlin_version = '0.13.1514'
-    ext.anko_version = '0.7'
+    ext.kotlin_version = '0.14.449'
+    ext.anko_version = '0.7.1'
     repositories {
         jcenter()
     }
