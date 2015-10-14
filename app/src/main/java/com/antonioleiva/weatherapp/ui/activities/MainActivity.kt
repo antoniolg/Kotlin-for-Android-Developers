@@ -24,16 +24,22 @@ class MainActivity : AppCompatActivity(), ToolbarManager {
 
         forecastList.layoutManager = LinearLayoutManager(this)
         attachToScroll(forecastList)
-
+        
         async {
-            val result = RequestForecastCommand(94043).execute()
-            uiThread {
-                val adapter = ForecastListAdapter(result) {
-                    startActivity<DetailActivity>(DetailActivity.ID to it.id,
-                            DetailActivity.CITY_NAME to result.city)
+            try {
+                val result = RequestForecastCommand(94043).execute()
+                uiThread {
+                    val adapter = ForecastListAdapter(result) {
+                        startActivity<DetailActivity>(DetailActivity.ID to it.id,
+                                DetailActivity.CITY_NAME to result.city)
+                    }
+                    forecastList.adapter = adapter
+                    toolbarTitle = "${result.city} (${result.country})"
                 }
-                forecastList.adapter = adapter
-                toolbarTitle = "${result.city} (${result.country})"
+            } catch(e: Exception) {
+                uiThread {
+                    toast(e.getMessage() ?: "Something went wrong!")
+                }
             }
         }
     }
