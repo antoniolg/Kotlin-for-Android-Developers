@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.antonioleiva.weatherapp" >
+<manifest
+    package="com.antonioleiva.weatherapp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".ui.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activities.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.activities.DetailActivity"
-            android:parentActivityName=".ui.activities.MainActivity" >
+            android:parentActivityName=".ui.activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.antonioleiva.weatherapp.ui.activities.MainActivity" />
+                android:value="com.antonioleiva.weatherapp.ui.activities.MainActivity"/>
         </activity>
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/settings"/>
+
     </application>
 
 </manifest>
