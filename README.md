@@ -1,10 +1,12 @@
 # Kotlin for Android Developers (the book)
 
-This is the code used you can use to follow the book.
+This is the code you can use to follow the book.
 
 [https://antonioleiva.com/kotlin-android-developers-book/](https://antonioleiva.com/kotlin-android-developers-book/)
 
 Are you tired of using an ancient, inexpressive and unsafe language to develop your Android apps? Do you cry out loud every time you see a Null Pointer Exception in your bug tracker? Then Kotlin is your solution! A language specifically created for Java developers, easy to learn, expressive, null safe and really intuitive. Your productivity will boost and your apps will become more robust. Learn Kotlin the easy way by example and discover the tricks that will make coding easier.
+
+And now, it's officially supported by Google!
 
 ![Kotlin for Android Developers cover](art/kotlin-android-developers.png?raw=true)
 
@@ -16,10 +18,25 @@ Are you tired of using an ancient, inexpressive and unsafe language to develop y
 
 [The book](https://antonioleiva.com/kotlin-android-developers-book/) is very practical, so it is recommended to follow the examples and the code in front of a computer and try everything it's suggested. You could, however, take a first read to get a broad idea and then dive into practice.
 
+## Versions
+
+As I update the book, I need to push -f this repository with the new changes, so that it matches with the new text.
+
+That means that if you are reading an old version of the book, main branches won't be aligned with your text.
+
+To make things easier, I'll keep track of those versions in separates branches, which will be linked from here:
+
+- 7th edition: February 2019 (current)
+- 6th edition: [April 2018](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-april-2018)
+- [5th edition: September 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-september-2017)
+- [4th edition: July 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-july-2017)
+- [3rd edition: June 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-june-2017)
+- [2nd edition: January 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-january-2017)
+- [1st edition: March 2016](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-march-2016)
 
 ## License
 
-    Copyright 2017 Antonio Leiva
+    Copyright 2019 Antonio Leiva
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
