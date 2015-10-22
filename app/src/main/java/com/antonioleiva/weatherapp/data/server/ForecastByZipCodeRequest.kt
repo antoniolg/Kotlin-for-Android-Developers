@@ -1,5 +1,6 @@
 package com.antonioleiva.weatherapp.data.server
 
+import android.util.Log
 import com.google.gson.Gson
 import java.net.URL
 
@@ -12,7 +13,9 @@ class ForecastByZipCodeRequest(private val zipCode: Long, val gson: Gson = Gson(
     }
 
     fun execute(): ForecastResult {
-        val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
+        val url = COMPLETE_URL + zipCode
+        Log.d("Url", url)
+        val forecastJsonStr = URL(url).readText()
         return gson.fromJson(forecastJsonStr, ForecastResult::class.java)
     }
 }
