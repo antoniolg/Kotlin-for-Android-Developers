@@ -1,0 +1,26 @@
+# Generated files
+bin/
+gen/
+
+# Gradle files
+.gradle/
+gradlew.bat
+gradlew
+build/
+gradle.properties
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Intellij project files
+*.iws
+.idea/tasks.xml
+.idea
+
+*.iml
+ 
+# OS
+.DS_Store
+
+# Api key
+app/src/main/res/values/api_key.xml
