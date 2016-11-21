@@ -21,6 +21,7 @@ import com.antonioleiva.weatherapp.data.server.ForecastServer
 import com.antonioleiva.weatherapp.domain.model.Forecast
 import com.antonioleiva.weatherapp.domain.model.ForecastList
 import com.antonioleiva.weatherapp.extensions.firstResult
+import java.util.*
 
 class ForecastProvider(val sources: List<ForecastDataSource> = ForecastProvider.SOURCES) {
 
@@ -36,7 +37,7 @@ class ForecastProvider(val sources: List<ForecastDataSource> = ForecastProvider.
 
     fun requestForecast(id: Long): Forecast = requestToSources { it.requestDayForecast(id) }
 
-    private fun todayTimeSpan() = System.currentTimeMillis() / DAY_IN_MILLIS * DAY_IN_MILLIS
+    private fun todayTimeSpan() = (System.currentTimeMillis() / DAY_IN_MS * DAY_IN_MS - TimeZone.getDefault().rawOffset) / 1000
 
     private fun <T : Any> requestToSources(f: (ForecastDataSource) -> T?): T = sources.firstResult { f(it) }
 
