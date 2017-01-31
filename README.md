@@ -16,6 +16,16 @@ Are you tired of using an ancient, inexpressive and unsafe language to develop y
 
 [The book](https://antonioleiva.com/kotlin-android-developers-book/) is very practical, so it is recommended to follow the examples and the code in front of a computer and try everything it's suggested. You could, however, take a first read to get a broad idea and then dive into practice.
 
+## Versions
+
+As I update the book, I need to push -f this repository with the new changes, so that it matches with the new text.
+
+That means that if you are reading an old version of the book, main branches won't be aligned with your text.
+
+To make things easier, I'll keep track of those versions in separates branches, which will be linked from here:
+
+- January 2017 (current)
+- [March 2016](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-march-2016)
 
 ## License
 
