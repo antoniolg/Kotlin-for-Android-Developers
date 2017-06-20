@@ -26,7 +26,7 @@ That means that if you are reading an old version of the book, main branches won
 
 To make things easier, I'll keep track of those versions in separates branches, which will be linked from here:
 
-- July 2017 (current)
+- July 2017 (current - its real release date is 20th of June)
 - [June 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-june-2017)
 - [January 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-january-2017)
 - [March 2016](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-march-2016)
