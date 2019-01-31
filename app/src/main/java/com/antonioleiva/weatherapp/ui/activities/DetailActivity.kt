@@ -2,7 +2,6 @@ package com.antonioleiva.weatherapp.ui.activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.widget.TextView
 import com.antonioleiva.weatherapp.R
@@ -13,12 +12,11 @@ import com.antonioleiva.weatherapp.extensions.textColor
 import com.antonioleiva.weatherapp.extensions.toDateString
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
-import org.jetbrains.anko.doAsync
+import kotlinx.coroutines.launch
 import org.jetbrains.anko.find
-import org.jetbrains.anko.uiThread
 import java.text.DateFormat
 
-class DetailActivity : AppCompatActivity(), ToolbarManager {
+class DetailActivity : CoroutineScopeActivity(), ToolbarManager {
 
     override val toolbar by lazy { find<Toolbar>(R.id.toolbar) }
 
@@ -35,9 +33,10 @@ class DetailActivity : AppCompatActivity(), ToolbarManager {
         toolbarTitle = intent.getStringExtra(CITY_NAME)
         enableHomeAsUp { onBackPressed() }
 
-        doAsync {
-            val result = RequestDayForecastCommand(intent.getLongExtra(ID, -1)).execute()
-            uiThread { bindForecast(result) }
+        launch {
+            val id = intent.getLongExtra(ID, -1)
+            val result = RequestDayForecastCommand(id).execute()
+            bindForecast(result)
         }
     }
 

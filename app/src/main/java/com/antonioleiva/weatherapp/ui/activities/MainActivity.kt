@@ -1,7 +1,6 @@
 package com.antonioleiva.weatherapp.ui.activities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import com.antonioleiva.weatherapp.R
@@ -9,12 +8,11 @@ import com.antonioleiva.weatherapp.domain.commands.RequestForecastCommand
 import com.antonioleiva.weatherapp.extensions.DelegatesExt
 import com.antonioleiva.weatherapp.ui.adapters.ForecastListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.doAsync
+import kotlinx.coroutines.launch
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.uiThread
 
-class MainActivity : AppCompatActivity(), ToolbarManager {
+class MainActivity : CoroutineScopeActivity(), ToolbarManager {
 
     private val zipCode: Long by DelegatesExt.preference(this, SettingsActivity.ZIP_CODE,
             SettingsActivity.DEFAULT_ZIP)
@@ -34,15 +32,13 @@ class MainActivity : AppCompatActivity(), ToolbarManager {
         loadForecast()
     }
 
-    private fun loadForecast() = doAsync {
+    private fun loadForecast() = launch {
         val result = RequestForecastCommand(zipCode).execute()
-        uiThread {
-            val adapter = ForecastListAdapter(result) {
-                startActivity<DetailActivity>(DetailActivity.ID to it.id,
-                        DetailActivity.CITY_NAME to result.city)
-            }
-            forecastList.adapter = adapter
-            toolbarTitle = "${result.city} (${result.country})"
+        val adapter = ForecastListAdapter(result) {
+            startActivity<DetailActivity>(DetailActivity.ID to it.id,
+                    DetailActivity.CITY_NAME to result.city)
         }
+        forecastList.adapter = adapter
+        toolbarTitle = "${result.city} (${result.country})"
     }
 }

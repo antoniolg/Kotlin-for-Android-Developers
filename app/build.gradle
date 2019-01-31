@@ -31,6 +31,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.anko:anko-common:$anko_version"
     implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
     implementation "com.google.code.gson:gson:2.8.5"
     implementation "com.squareup.picasso:picasso:2.5.2"
 }
