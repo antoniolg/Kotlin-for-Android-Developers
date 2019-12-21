@@ -34,7 +34,7 @@ To make things easier, I'll keep track of those versions in separates branches, 
 - [2nd edition: January 2017](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-january-2017)
 - [1st edition: March 2016](https://github.com/antoniolg/Kotlin-for-Android-Developers/tree/master-march-2016)
 
-## License
+## License update
 
     Copyright 2019 Antonio Leiva
 
