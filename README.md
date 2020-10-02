@@ -1,4 +1,4 @@
-# Kotlin for Android Developers (the book)
+# Kotlin For Android Developers (the book)
 
 This is the code you can use to follow the book.
 
@@ -8,7 +8,7 @@ Are you tired of using an ancient, inexpressive and unsafe language to develop y
 
 And now, it's officially supported by Google!
 
-![Kotlin for Android Developers cover](art/kotlin-android-developers.png?raw=true)
+![Kotlin For Android Developers cover](art/kotlin-android-developers.png?raw=true)
 
 ## About the book
 
@@ -44,7 +44,7 @@ To make things easier, I'll keep track of those versions in separates branches, 
 
        http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
+    Unless required by applicable law or agreed to in writing, Software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
